@@ -16,9 +16,14 @@
         var data = ['a', 'b', 'c']
 
         for (var i=0; i<data.length; i++) {
-          document.getElementById(data[i]).onfocus = function() {
-            inputFocus(i)
-          }
+          (function (j) {
+            document.getElementById(data[j]).onfocus = function() {
+              inputFocus(j)
+            }
+          })(i)
+          // document.getElementById(data[i]).onfocus = function() {
+          //   inputFocus(i)
+          // }
         }
 
         // correct answer
