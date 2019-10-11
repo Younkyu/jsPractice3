@@ -1,0 +1,44 @@
+<html>
+<head>
+
+</head>
+<body>
+    <input id="a">
+    <input id="b">
+    <input id="c">
+    <div id="z"></div>
+    <script>
+
+        function inputFocus(text) {
+          document.getElementById('z').innerHTML = text
+        }
+
+        var data = ['a', 'b', 'c']
+
+        for (var i=0; i<data.length; i++) {
+          document.getElementById(data[i]).onfocus = function() {
+            inputFocus(i)
+          }
+        }
+
+        // correct answer
+        // for (let i=0; i<data.length; i++) {
+        //   document.getElementById(data[i]).onfocus = function() {
+        //     var z = i.valueOf()
+        //     inputFocus(i)
+        //   }
+        // }
+
+        // document.getElementById('a').onfocus = function () {
+        //   inputFocus('1')
+        // }
+        // document.getElementById('b').onfocus = function () {
+        //   inputFocus('2')
+        // }
+        // document.getElementById('c').onfocus = function () {
+        //   inputFocus('3')
+        // }
+
+    </script>
+</body>
+</html>
